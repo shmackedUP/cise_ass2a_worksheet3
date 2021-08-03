@@ -4,11 +4,12 @@
   "description": "Bailey Hickman cise_ass2a_worksheet3",
   "main": "app.js",
   "scripts": {
-    "build": "cd './client/bailey-booksearcher' && npm run build",
-    "install-client": "cd './client/bailey-booksearcher' && npm install",
+    "build": "cd 'client/bailey-booksearcher' && npm run build",
+    "install-client": "cd 'client/bailey-booksearcher' && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node app.js",
     "app": "nodemon app.js",
+    "client": "cd 'client/bailey-booksearcher' && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
