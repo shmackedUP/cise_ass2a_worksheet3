@@ -16,12 +16,11 @@ app.use(cors({ origin: true, credentials: true }));
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-app.get('/', (req, res) => res.send('Hello world!'));
-
 // use Routes
-app.use('/api/books', books);
+app.use('./routes/api/books', books);
 
-const port = process.env.PORT || 8082;
+const port = process.env.PORT || 5000;
+
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('./client/bailey-booksearcher'));
