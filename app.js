@@ -17,13 +17,15 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ extended: false }));
 
 // use Routes
-app.use('./routes/api/books', books);
+app.use('/api/books', books);
 
-const port = process.env.PORT || 5000;
+app.get('/', (req, res) => res.send('Hello world!'));
+
+const port = process.env.PORT || 8082;
 
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('./client/bailey-booksearcher'));
+    app.use(express.static('client/bailey-booksearcher'));
 }
 
 
