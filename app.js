@@ -24,7 +24,7 @@ app.use('/api/books', books);
 const port = process.env.PORT || 8082;
 
 if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'));
+    app.use(express.static('./client/bailey-booksearcher'));
 }
 
 
