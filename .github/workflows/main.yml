@@ -1,0 +1,19 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shmackedUP/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "baileymerntest" #Must be unique in Heroku
+          heroku_email: "dxw8966@aut.ac.nz"
+          appdir: "cise_ass2a_worksheet3" # <- This will point to the api folder in your project
+          procfile: "web:node backend/server.js"
